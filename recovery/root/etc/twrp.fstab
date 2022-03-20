@@ -8,7 +8,6 @@
 /firmware	vfat	/dev/block/bootdevice/by-name/modem					flags=slotselect;display="Firmware";mounttodecrypt;fsflags=context=u:object_r:firmware_file:s0
 /misc		emmc	/dev/block/bootdevice/by-name/misc
 /modem		emmc	/dev/block/bootdevice/by-name/modem					flags=slotselect;backup=1;display="Modem"
-/bluetooth	emmc	/dev/block/bootdevice/by-name/bluetooth					flags=slotselect;backup=1;subpartitionof=/modem
 /dsp		emmc	/dev/block/bootdevice/by-name/dsp					flags=slotselect;backup=1;subpartitionof=/modem
 /efs1		emmc	/dev/block/bootdevice/by-name/modemst1					flags=backup=1;display=EFS
 /efs2		emmc	/dev/block/bootdevice/by-name/modemst2					flags=backup=1;subpartitionof=/efs1
@@ -19,5 +18,5 @@
 /encrypt	emmc	/dev/block/bootdevice/by-name/encrypt
 
 # Removable storage
-/usbstorage      vfat    /dev/block/sdg1                            /dev/block/sdg     flags=fsflags=utf8;display="OTG USB Storage";storage;wipeingui;removable
+/usbstorage      vfat    /dev/block/sdh1                            /dev/block/sdh     flags=fsflags=utf8;display="OTG USB Storage";storage;wipeingui;removable
 /external_sd     auto    /dev/block/mmcblk0p1                       /dev/block/mmcblk0 flags=display="Micro SDCard";storage;wipeingui;removable;encryptable=/dev/block/bootdevice/by-name/encrypt
